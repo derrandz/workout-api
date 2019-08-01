@@ -29,30 +29,36 @@ endpoints:
 + List devices
 + Create device
 + Read device
+
 ## Quick start
 
-This project is intended to be used with the latest Active LTS release of [Node.js][nodejs]. To start, just clone the repository with following commands:
 
 ```sh
-git clone https://github.com/jsynowiec/node-typescript-boilerplate
-cd node-typescript-boilerplate
-npm install
+$ yarn test
 ```
-
-or download and unzip current `master` branch:
 
 ```sh
-wget https://github.com/jsynowiec/node-typescript-boilerplate/archive/master.zip -O node-typescript-boilerplate
-unzip node-typescript-boilerplate.zip && rm node-typescript-boilerplate.zip
+$ yarn start
 ```
 
-Now start adding your code in the `src` and unit tests in the `__tests__` directories. Have fun and build amazing things 🚀
+```sh
+$ yarn build
+```
 
-### Unit tests in JavaScript
+## Directory structure
 
-Writing unit tests in TypeScript can sometimes be troublesome and confusing. Especially when mocking dependencies and using spies.
++ src
+++++ providers: contains implementations of http providers in use in our apis
+++++ resources: contains the resources definition
+++++ repositories: contains the stores that leverage data to our apis
+++++ databases: contains our databases apis
+++++ controllers: contains our business logic by domain/context
+++++ apis: contains implementation and serving logic of our apis
+++++ index.ts: entrypoint
 
-This is **optional**, but if you want to learn how to write JavaScript tests for TypeScript modules, read the [corresponding wiki page][wiki-js-tests].
+## Contributing
+
+Please refer to our [contribution guide](https://github.com/jshrt/api/master#CONTRIBUTING.md)
 
 ## Available scripts
 
