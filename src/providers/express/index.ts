@@ -1,5 +1,6 @@
-import express from "express"
+import * as Express from "express"
 
+import { IProvider } from "../provider"
 import { Errors } from "./errors"
 
 const expressHttpMethods = {
@@ -14,15 +15,15 @@ const state = {
 }
 
 const create = () => {
-  state.instance = express()
+  state.instance = Express()
 }
 
-const register = (verb: string, endpoint: string, handler: () => void) => {
+const register = (verb: string, endpoint: string, handler: (request: any, response: any) => void) => {
   if (! (verb in expressHttpMethods)) {
     throw Errors.UndefinedVerb
   }
 
-  state.instance[HTTP_VERB](endpoint, handler)
+  state.instance[verb](endpoint, handler)
 }
 
 const start = (port: number, cb: () => void) => {
@@ -31,13 +32,19 @@ const start = (port: number, cb: () => void) => {
 
 const stop = () => {
   if (state.server) {
-    state.instance..stop()
+    state.server.close()
+    state.server = null
   }
 }
 
-const Express = {
+const ExpressProvider: IProvider = {
+  __state: state,
   create,
   register,
   start,
   stop
+}
+
+export {
+  ExpressProvider,
 }
