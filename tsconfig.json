@@ -13,10 +13,14 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
     "noImplicitAny": false,
     "noImplicitThis": false,
-    "strictNullChecks": false
+    "strictNullChecks": false,
+    "rootDir": ".",
+    "baseUrl": "./src",
+    "paths": {
+      "~/*": ["./*"],
+    }
   },
   "include": [
     "src/**/*",
