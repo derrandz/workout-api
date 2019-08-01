@@ -51,6 +51,7 @@ $ yarn build
 ++++ providers: contains implementations of http providers in use in our apis
 ++++ resources: contains the resources definition
 ++++ repositories: contains the stores that leverage data to our apis
+++++ databases: contains our databases apis
 ++++ controllers: contains our business logic by domain/context
 ++++ apis: contains implementation and serving logic of our apis
 ++++ index.ts: entrypoint
