@@ -1,3 +1,6 @@
 export interface IProvider {
-  register: (endpoint: string, handler: () => void)
+  create: () => void,
+  register: (endpoint: string, handler: () => void),
+  start: () => void,
+  stop: () => void,
 }
