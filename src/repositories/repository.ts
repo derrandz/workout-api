@@ -1,7 +1,9 @@
 export interface IRepository {
   list: () => void,
-  find: () => void,
-  add: () => void,
-  edit: () => void,
-  delete: () => void,
+  find: (id: number) => void,
+  add: (instance: object) => void,
+  edit: (id: number, instance: object) => void,
+  deleteById: (id: number) => void,
+
+  [otherMethod: string]: (...args: Array<any>) => void,
 }
