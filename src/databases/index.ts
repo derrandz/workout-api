@@ -1,1 +1,1 @@
-// export * from "./abstract-database"
+export * from "./abstract-database"
