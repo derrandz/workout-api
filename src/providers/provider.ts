@@ -1,5 +1,5 @@
 export interface IProvider {
-  create: () => void,
+  create: () => any,
   register?: (
     verb: string,
     endpoint: string,
