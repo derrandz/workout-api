@@ -1,9 +1,14 @@
 export interface IProvider {
   create: () => void,
-  register: (verb: string, endpoint: string, handler: (request: any, response: any) => void) => void,
+  register?: (
+    verb: string,
+    endpoint: string,
+    handler: (request: any, response: any) => void
+  ) => void,
+  listen?: (event: string, handler: (...args: Array<any>) => void) => void,
   start: (port: number, callback: Function) => void,
   stop: () => void,
 
-  // internal properties
+  // internal propertiesw
   [i: string]: any,
 }
