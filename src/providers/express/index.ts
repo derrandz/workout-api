@@ -16,6 +16,7 @@ const state = {
 
 const create = () => {
   state.instance = Express()
+  return state.instance
 }
 
 const register = (verb: string, endpoint: string, handler: (request: any, response: any) => void) => {
@@ -48,3 +49,5 @@ const ExpressProvider: IProvider = {
 export {
   ExpressProvider,
 }
+
+export * from "./errors"
